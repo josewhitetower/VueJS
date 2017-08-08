@@ -1,31 +1,26 @@
 new Vue({
     el: '#vue-app',
     data: {
-        characters: ['Mario', 'Luigi', 'Yoshi', 'Bowser'],
-        ninjas: [
-            { name: 'Ryu', age: 25, city: "NY" },
-            { name: 'Yoshi', age: 35 },
-            { name: 'Ken', age: 55 },
 
-        ]
+        health: 100,
+        ended: false
+
 
     },
     methods: {
-        // addToA: function() {
-        //     return this.a + this.age;
-        // },
-        // addToB: function() {
-        //     return this.b + this.age;
-        // }
-
+        punch: function() {
+            this.health -= 10;
+            if (this.health <= 0) {
+                this.ended = true;
+            }
+        },
+        restart: function() {
+            this.health = 100;
+            this.ended = false;
+        }
     },
     computed: {
-        compClasses: function() {
-            return {
-                available: this.available,
-                nearby: this.nearby
-            }
-        }
+
     }
 
 });
