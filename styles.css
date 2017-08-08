@@ -26,3 +26,9 @@
     width: 120px;
     margin: 0 auto;
 }
+
+#over {
+    text-align: center;
+    color: red;
+    font-size: 40px;
+}

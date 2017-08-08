@@ -22,11 +22,17 @@
         <div id="bag-health">
             <div v-bind:style="{width:health + '%'}"></div>
         </div>
+
         <!-- game controls  -->
         <div id="controls">
             <button v-on:click="punch" v-show=!ended>Punch</button>
             <button v-on:click="restart">Restart</button>
 
+        </div>
+        <!--Game Over  -->
+
+        <div v-show=ended>
+            <p id="over">Game Over!</p>
         </div>
     </div>
     <script src="app.js"></script>
