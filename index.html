@@ -12,13 +12,17 @@
 </head>
 
 <body>
-    <h1>Components</h1>
-    <div id="vue-app-one">
-        <greeting></greeting>
+    <div id="vue-app">
+        <h2>Refs</h2>
+        <input type="text" ref="input">
+        <button v-on:click="readRefs">Submit</button>
+        <p>{{output1}} Your favorite food is: {{output}}</p>
+        <div ref="test">
+            Hellos
+        </div>
     </div>
-    <div id="vue-app-two">
-        <greeting></greeting>
-    </div>
+
+
     <script src="app.js"></script>
 </body>
 

@@ -1,38 +1,23 @@
-Vue.component('greeting', {
-    template: '<p>Hey there, Re-usable component, I am {{name}}. <button v-on:click="changeName">Change Name</button></p>.',
-    data: function() {
-        return {
-            name: 'Yoshi'
-        }
-    },
-    methods: {
-        changeName: function() {
-            this.name = 'Mario';
-        }
-    }
-})
-
 new Vue({
-    el: '#vue-app-one',
+    el: '#vue-app',
+    data: {
+        output: '',
+        output1: ''
+    },
 
     methods: {
+        readRefs: function() {
+
+            console.log(this.$refs);
+
+            this.output = this.$refs.input.value;
+            this.output1 = this.$refs.test.innerText;
+
+        }
 
     },
     computed: {
 
-
-    }
-
-});
-
-new Vue({
-    el: '#vue-app-two',
-
-    methods: {
-
-
-    },
-    computed: {
 
     }
 
