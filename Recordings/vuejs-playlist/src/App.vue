@@ -2,10 +2,8 @@
   <div >
       <app-header></app-header>
       <app-ninjas></app-ninjas>
-      <app-footer></app-footer>
-   
-  </div>
-    
+      <app-footer></app-footer>   
+  </div>    
 </template>
 
 <script>
