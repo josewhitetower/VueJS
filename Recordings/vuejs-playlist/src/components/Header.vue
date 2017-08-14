@@ -20,7 +20,7 @@ export default {
   },
   methods:{
     changeName:function(){
-      this.title="Vue Characters"
+      this.$emit('changeName', 'Vue Characters');
     }
   }
 }

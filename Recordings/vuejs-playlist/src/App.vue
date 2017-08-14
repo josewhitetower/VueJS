@@ -1,6 +1,6 @@
 <template>
   <div >
-      <app-header :title='title'></app-header>
+      <app-header :title='title' v-on:changeName='updateName($event)'></app-header>
       <app-ninjas :ninjas='ninjas'></app-ninjas>
       <app-footer :title='title'></app-footer>   
   </div>    
@@ -30,6 +30,11 @@ export default {
             ],
       title: "Vue Ninjas"
    }
+  },
+  methods:{
+    updateName: function(updatedName){
+      this.title=updatedName;
+    }
   }
 }
 </script>
