@@ -18,7 +18,7 @@ export default {
    }
   },
   created(){
-      bus.$on('titleChanged',(data)=>{
+      bus.$on('titleChanged',(data)=>{ //It has to be a ()=> function, otherwise it won't work...why?
           this.title=data;
       })
   }
