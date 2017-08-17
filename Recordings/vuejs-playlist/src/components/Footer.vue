@@ -7,14 +7,15 @@
 <script>
 import {bus} from '../main';
 export default {
-    props:{
-        title:{
-            type:String
-        }
-    },
+    // props:{
+    //     titles:{
+    //         type:String
+    //     }
+    // },
   data () {
    return{
-    copyright:'Copyright 2017 José Torreblanca'
+    copyright:'Copyright 2017 José Torreblanca',
+    title:''
    }
   },
   created(){

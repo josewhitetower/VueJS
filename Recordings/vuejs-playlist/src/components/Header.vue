@@ -9,12 +9,12 @@
 import {bus} from '../main';
 
 export default {
-  props:{
-    title:{
-      type:String
-    }
+  // props:{
+  //   titles:{
+  //     type:String
+  //   }
 
-  },
+  // },
   data () {
     return {
       title:'Vue Ninjas'
