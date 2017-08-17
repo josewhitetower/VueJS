@@ -10,7 +10,7 @@ import {bus} from '../main';
 
 export default {
   // props:{
-  //   titles:{
+  //   title:{
   //     type:String
   //   }
 

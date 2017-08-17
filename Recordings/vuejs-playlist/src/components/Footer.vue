@@ -8,14 +8,14 @@
 import {bus} from '../main';
 export default {
     // props:{
-    //     titles:{
+    //     title:{
     //         type:String
     //     }
     // },
   data () {
    return{
     copyright:'Copyright 2017 José Torreblanca',
-    title:''
+    title:'Vue Ninjas'
    }
   },
   created(){
