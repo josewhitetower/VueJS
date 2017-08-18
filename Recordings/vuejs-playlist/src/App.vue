@@ -1,40 +1,27 @@
 <template>
   <div >
-      <app-header :title='title' v-on:changeName='updateName($event)'></app-header>
-      <app-ninjas :ninjas='ninjas'></app-ninjas>
-      <app-footer :title='title'></app-footer>   
+      <form-helper>
+        <h1 slot='title'>{{title}}</h1>
+        <p slot ='text'>I am the paragraph of the slot</p> 
+      </form-helper> 
+      
   </div>    
 </template>
 
 <script>
-import Header from './components/Header.vue';
-import Footer from './components/Footer.vue';
-import Ninjas from './components/Ninjas.vue';
-// import Countries from './Countries.vue'
+import formHelper from './components/formHelper.vue';
 
 export default {
   components:{
-    'app-header': Header,
-    'app-footer': Footer,
-    'app-ninjas': Ninjas
-  },
+   'form-helper':formHelper
+   },   
   data () {
    return{
-      ninjas: [
-                {name: 'Ryu', speciality: 'Vue Components', show: false},
-                {name: 'Crystal', speciality: 'HTML Wizardry', show: false},
-                {name: 'Hitoshi', speciality: 'Click Events', show: false},
-                {name: 'Tango', speciality: 'Conditionals', show: false},
-                {name: 'Kami', speciality: 'Webpack', show: false},
-                {name: 'Yoshi', speciality: 'Data Diggin', show: false}
-            ],
-      title: "Vue Ninjas"
+      title:'I am a slot title' // The dynamic data must be defined where the component where the slot is created
    }
   },
   methods:{
-    updateName: function(updatedName){
-      this.title=updatedName;
-    }
+    
   }
 }
 </script>
