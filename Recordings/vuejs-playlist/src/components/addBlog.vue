@@ -6,18 +6,7 @@
        <input type="text" v-model.lazy="blog.title" required>
        <label>Blog Content</label>
        <textarea v-model.lazy="blog.content"></textarea>
-    </form>
-    <div id="preview">
-        <h3>Preview Blog</h3>
-        <p>Blog Title: {{blog.title}}</p>
-        <p>Blog Cintent:</p>
-        <p> {{blog.content}}</p>
-        <p>Blog Categories</p>
-        <ul>
-            <li v-for="category in blog.categories" :key="category">{{category}}</li>
-        </ul>
-    </div>
-    <div id="checkboxes">
+     <div id="checkboxes">
         <label>Ninjas</label>
         <input type="checkbox" value="ninjas" v-model="blog.categories">
         <label>Wizards</label>
@@ -27,6 +16,24 @@
         <label>Cheese</label>
         <input type="checkbox" value="cheese" v-model="blog.categories">
     </div>
+    <select v-model="blog.author">
+        <option disabled value="">Please select one</option>
+        <option v-for="author in authors" :key="author">{{author}}</option>
+    </select>
+    </form>
+
+    <div id="preview">
+        <h3>Preview Blog</h3>
+        <p>Blog Title: {{blog.title}}</p>
+        <p>Blog Content:</p>
+        <p> {{blog.content}}</p>
+        <p>Blog Categories</p>
+        <ul>
+            <li v-for="category in blog.categories" :key="category">{{category}}</li>
+        </ul>
+        <p>Author: {{blog.author}}</p>
+    </div>
+ 
   </div>    
 </template>
 
@@ -39,8 +46,10 @@ export default {
        blog:{
         title:"",
         content:"",
-        categories:[]
-       }      
+        categories:[],
+        author:""
+       } ,
+       authors:['The Net Ninja', 'The Angular Avenger', 'The Vue Vindicator']     
    }
   },
   methods:{
