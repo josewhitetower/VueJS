@@ -1,0 +1,23 @@
+navigator.geolocation.getCurrentPosition(function(position) {
+
+    var lat = position.coords.latitude;
+
+    var lon = position.coords.longitude;
+
+    var apiCall = 'https://api.openweathermap.org/data/2.5/weather?appid=[myAPPID]&units=metric&lat=' + lat + '&lon=' + lon;
+
+    $.getJSON(apiCall, weatherCallback);
+
+    function weatherCallback(weatherData) {
+        var cityName = weatherData.name;
+        var type = weatherData.weather[0].main;
+        var temp = weatherData.main.temp;
+        var icono = weatherData.weather[0].icon;
+        var description = weatherData.weather[0].description;
+        $('.weatherResponse').append('The Weather in ' + cityName + ' is ' + type + ' in ' + description);
+        $("#my_image").attr("src", "http://openweathermap.org/img/w/" + icono + ".png")
+        $("#temperatura").append(temp + ' *C ');
+    }
+
+    $(".inner").append("<p>Test</p>");
+});
