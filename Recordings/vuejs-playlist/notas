@@ -18,6 +18,6 @@ navigator.geolocation.getCurrentPosition(function(position) {
         $("#my_image").attr("src", "http://openweathermap.org/img/w/" + icono + ".png")
         $("#temperatura").append(temp + ' *C ');
     }
-
+ 
     $(".inner").append("<p>Test</p>");
 });
