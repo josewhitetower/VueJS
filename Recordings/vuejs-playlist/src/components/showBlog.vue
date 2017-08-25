@@ -33,7 +33,24 @@ export default {
               return blog.title.match(this.search);
           });
       }
-  }
+  },
+  filters:{
+      toUppercase(value){ //it comes from to-uppercase
+          return value.toUpperCase();
+  },
+      snipped(value){
+       return value.slice(0,100)+' ...';
+   }
+
+        
+},
+ directives:{
+     'rainbow': {
+    bind(el, binding, vnode) {
+        el.style.color = "#" + Math.random().toString().slice(2, 8);
+    }
+ }
+ }
 }
 </script>
 
