@@ -1,15 +1,15 @@
 <template>
   <div v-theme:column="'narrow'" id="show-blogs" > <!--it has to be a string " '' "-->
-   <h1>All Blog Articles</h1>
+   <h1>List Blog Titles</h1>
    <input id ="search"type="text" v-model="search" placeholder="search blog">
    <div class="single-blog" v-for="blog in filteredBlogs" :key="blog.title">
        <h2 v-rainbow>{{blog.title | to-uppercase}}</h2>
-       <article>{{blog.body|snipped}}</article>
-   </div>
+  </div>
   </div>    
 </template>
 
 <script>
+
 import searchMixin from '../mixins/searchMixin.js';
 export default {
  
@@ -28,7 +28,7 @@ export default {
       })
   },
   computed: {
-     
+    
   },
   filters:{
       toUppercase(value){ //it comes from to-uppercase
