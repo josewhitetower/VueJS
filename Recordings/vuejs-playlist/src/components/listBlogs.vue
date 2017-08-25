@@ -11,6 +11,7 @@
 <script>
 
 import searchMixin from '../mixins/searchMixin.js';
+import readData from '../mixins/readData.js';
 export default {
  
   data () {
@@ -22,11 +23,7 @@ export default {
   methods:{
     
   },
-  created(){
-      this.$http.get("https://jsonplaceholder.typicode.com/posts").then(function(data){
-         this.blogs=data.body.slice(0,10);
-      })
-  },
+  
   computed: {
     
   },
@@ -47,7 +44,7 @@ export default {
     }
  }
  },
- mixins:[searchMixin]
+ mixins:[searchMixin, readData]
 }
 </script>
 
