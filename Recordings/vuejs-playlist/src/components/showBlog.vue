@@ -58,6 +58,9 @@ export default {
 }
 #search{
     box-sizing: border-box;
+    min-width: 800px;
+     padding: 10px;
+   
 }
 .single-blog{
     padding: 20px;
