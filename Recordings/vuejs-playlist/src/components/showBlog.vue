@@ -29,6 +29,7 @@ export default {
           var blogsArray=[];
           for(let key in data){
               data[key].id=key;
+              data[key].title=data[key].title.toLowerCase();
               blogsArray.push(data[key]);
           }
           this.blogs=blogsArray;
@@ -78,4 +79,5 @@ export default {
     div.single-blog a {
     text-decoration: none;
     }
+#search:valid { text-transform: uppercase; }
 </style>
